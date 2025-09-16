@@ -1,39 +1,39 @@
 #include <iostream>
 
-int main()
+int main() 
 {
-  double const epsilon = 10e-6;
-  double a, b, c;
-  std::cin >> a >> b >> c;
-  if (std::abs(a) < epsilon)
+  char num;
+  std::cin >> num;
+  switch (char l = num)
   {
-    if (std::abs(b) > epsilon) 
+    case 'a' ... 'z': 
     {
-      double result = -c / b;
-      std::cout << "Решение линейного уравнения: " << result << '\n';
+      std::cout << "Это строчная буква \n";
+      break;
     }
-    else 
+
+    case 'A' ... 'Z':
     {
-      std::cout << "Данное уравнение не имеет решения" << '\n';
+      std::cout << "Это заглавная буква \n";
+      break;
     }
-  }
-  else
-  {
-    double D = b*b - 4 * a * c;
-    if (D < 0)
+
+    case '0' ... '9':
     {
-      std::cout << "Данное уравнение не имеет решения" << '\n';
+      std::cout << "Это цифра \n";
+      break;
     }
-    else if (D < epsilon)
+
+    [[likely]] case '!':
+    [[likely]] case ',':
+    [[likely]] case '.':
+    [[likely]] case ':' ... ';':
+    [[likely]]case '?':
     {
-      double x = -b / (2 * a);
-      std::cout << "Корень квадратного уравнения: " << x << '\n';
+      std::cout << "Это знак препинания \n";
+      break;
     }
-    else
-    {
-      double x1 = (-b - std::sqrt(D)) / (2 * a);
-      double x2 = (-b + std::sqrt(D)) / (2 * a);
-      std::cout << "Решение квадратного уравнения: " << x1 << " " << x2 << '\n';
-    }
+
+    default: { std::cout << "Это другой символ \n"; }
   }
 }
