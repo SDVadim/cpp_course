@@ -4,7 +4,7 @@ int main()
 {
   char num;
   std::cin >> num;
-  switch (char l = num)
+  switch (num)
   {
     case 'a' ... 'z': 
     {
