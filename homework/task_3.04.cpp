@@ -21,16 +21,16 @@ class Entity {
 
 class Tester1 {
   public:
-    static void test() {
+    void test() {
       std::cout << Entity::sum(2, 3) << '\n';
     }
 };
 
 class Tester2 {
   public:
-  static void test() {
-    std::cout << Entity::mult(2, 3) << '\n';
-  }
+    void test() {
+      std::cout << Entity::mult(2, 3) << '\n';
+    }
 };
 
 int main() {
