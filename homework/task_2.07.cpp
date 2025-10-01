@@ -1,33 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 int main()
 {
-  std::vector<double> array;
-  std::cout << "Введите циферки через пробел, закончите нулем\n";
+
+  std::cout << "Введите количество элементов\n";
   double sum = 0;
-  while (true)
-  {
-    double a;
-    std::cin >> a;
-    sum += a;
-    if (a == 0)
-    {
-      break;
-    }
-    array.push_back(a);
+  size_t len = 0;
+  std::cin >> len;
+  int* array = new int[len]{};
+  for(size_t i = 0; i < len; ++i) {
+    std::cin >> array[i];
   }
-  std::size_t const size = array.size();
   double min = array[0];
   double max = -1e10;
-  double avg = sum / size;
+  double avg = sum / len;
   double shift = 0;
-  for (std:: size_t i = 0; i < size; ++i)
+  for (size_t i = 0; i < len; ++i)
   {
-    min = std::min(min, array[i]);
-    max = std::max(max, array[i]);
-    shift = (array[i] - avg) * (array[i] - avg);
+    double val = array[i];
+    min = std::min(min, val);
+    max = std::max(max, val);
+    shift = (val - avg) * (val - avg);
   }
-  shift = std::sqrt(shift / size);
+  shift = std::sqrt(shift / len);
   std::cout << "min: " << min << "\nmax: " << max << "\navg: " << avg << "\nshift:" << shift << '\n';
 }

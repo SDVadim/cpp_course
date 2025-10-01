@@ -28,7 +28,7 @@ int main()
     [[likely]] case ',':
     [[likely]] case '.':
     [[likely]] case ':' ... ';':
-    [[likely]]case '?':
+    [[likely]] case '?':
     {
       std::cout << "Это знак препинания \n";
       break;
