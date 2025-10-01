@@ -4,7 +4,6 @@
 
 int main()
 {
-
   std::cout << "Введите количество элементов\n";
   double sum = 0;
   size_t len = 0;
@@ -26,4 +25,5 @@ int main()
   }
   shift = std::sqrt(shift / len);
   std::cout << "min: " << min << "\nmax: " << max << "\navg: " << avg << "\nshift:" << shift << '\n';
+  delete[] array;
 }
