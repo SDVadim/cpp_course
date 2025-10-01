@@ -3,7 +3,7 @@
 int main()
 {
   double const epsilon = 10e-6;
-  double a, b, c;
+  double a = 0, b = 0, c = 0;
   std::cin >> a >> b >> c;
   if (std::abs(a) < epsilon)
   {
